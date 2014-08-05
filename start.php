@@ -13,11 +13,12 @@ define("NEW_LINE", "%0D%0A");
 function qrcode_init() {
     $context = elgg_get_context();
    // elgg_dump($context);
-    $lib = elgg_get_plugins_path() . 'qrcode/lib/interconnected.php';
-    elgg_register_library('qrcode', $lib);
+
+    elgg_register_library("qrcode", dirname(__FILE__) . "/vendors/phpqrcode/phpqrcode.php");
+
     elgg_load_library('qrcode');
 
-    elgg_extend_view('css/admin', 'interconnected/admin', 1);
+    elgg_extend_view('css/admin', 'qrcode/admin', 1);
     elgg_extend_view('page/elements/head', 'interconnected/metatags', 500);
     if (($context != 'admin')&&($context != 'members')&&($context != 'messages')&&($context != 'co-creators')&&($context != 'reportedcontent')&&($context != 'settings')&&($context != 'suggested_friends')&&($context != 'suggested_friends_extended'))
     {
