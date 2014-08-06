@@ -1,5 +1,6 @@
 <div class="plugin-panel">
 <?php 
+/*
 	$site_logo = elgg_get_plugin_setting('site_logo', 'qrcode');
     
     $full_site_logo = elgg_get_plugin_setting('full_site_logo', 'qrcode');
@@ -96,7 +97,13 @@
     echo '<label>' . elgg_echo('qrcode:admin:max-meta-description') . ':' . '</label>';
     echo "<br />";    
     echo elgg_view('input/text', array('name'=>'params[max_meta_description]', 'value'=>$max_meta_description));  
-    echo "<br />";    
-                    
+    echo "<br />"; */   
+	echo "<h4>";
+	echo elgg_echo('qrcode:admin:title:qrcode');
+	echo "</h4><br/>";
+	echo '<label>' . elgg_echo('qrcode:admin:site-logo') . ':' . '</label>';
+    echo "<br />";
+	echo elgg_view('input/text', array('name'=>'params[site_logo]', 'value'=>$site_logo));
+	echo "<br /><br/>";                    
 ?>	
 </div>

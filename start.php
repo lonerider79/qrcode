@@ -14,17 +14,17 @@ function qrcode_init() {
     $context = elgg_get_context();
    // elgg_dump($context);
 
-    elgg_register_library("qrcode", dirname(__FILE__) . "/vendors/phpqrcode/phpqrcode.php");
+    elgg_register_library("qrcode", dirname(__FILE__) . "/vendors/phpqrcode/qrlib.php");
 
     elgg_load_library('qrcode');
 
     elgg_extend_view('css/admin', 'qrcode/admin', 1);
-    elgg_extend_view('page/elements/head', 'interconnected/metatags', 500);
+    //elgg_extend_view('page/elements/head', 'interconnected/metatags', 500);
     if (($context != 'admin')&&($context != 'members')&&($context != 'messages')&&($context != 'co-creators')&&($context != 'reportedcontent')&&($context != 'settings')&&($context != 'suggested_friends')&&($context != 'suggested_friends_extended'))
     {
 	    elgg_extend_view('css/elgg', 'interconnected/css');
         elgg_extend_view('page/elements/sidebar','sidebar/interconnected',700);
-      	elgg_extend_view('profile/details','interconnected/profile',500);
+      	//elgg_extend_view('profile/details','interconnected/profile',500);
         elgg_extend_view('widgets/set_description/content', 'interconnected/simple', 500);
 	}
 

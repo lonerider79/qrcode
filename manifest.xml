@@ -11,7 +11,7 @@
 		<type>elgg_release</type>
 		<version>1.8</version>
 	</requires>
-	<suggests>
+    <suggests>
     	<type>plugin</type>
     	<name>profile_manager</name>
     </suggests>

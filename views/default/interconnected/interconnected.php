@@ -6,7 +6,7 @@
  * process: entity guid is grabbed from the current url if possible. if no guid is available/found then the page context will be used to locate the data to use to populate the sharing fields for the recipient social network. images are used where possible - blog_tools is supported for blog images. videolist currently only supports medium sized icons.
  *  
  *************************/
-
+    elgg_load_library('qrcode');
     $INTERCONNECTED_PAGE_DATA = get_sharing_data_for_current_page();
     $social_sites = array(
                             'twitter',
