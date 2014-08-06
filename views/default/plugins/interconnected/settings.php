@@ -97,13 +97,33 @@
     echo '<label>' . elgg_echo('qrcode:admin:max-meta-description') . ':' . '</label>';
     echo "<br />";    
     echo elgg_view('input/text', array('name'=>'params[max_meta_description]', 'value'=>$max_meta_description));  
-    echo "<br />"; */   
-	echo "<h4>";
-	echo elgg_echo('qrcode:admin:title:qrcode');
-	echo "</h4><br/>";
-	echo '<label>' . elgg_echo('qrcode:admin:site-logo') . ':' . '</label>';
+    echo "<br />"; */
+    elgg_load_library('qrcode'); //To get the Constants
+    $ecc_options = array(
+            QR_ECLEVEL_L => "L(minimum)",
+            QR_ECLEVEL_M => "M",
+            QR_ECLEVEL_Q => "Q",
+            QR_ECLEVEL_H => "H(maximum)"
+    );
+    $size_options = array_combine(range(1,10),range(1,10)); /* 1-10 */
+    
+    $qrcode_ECC = elgg_get_plugin_setting('qrcode_ECC', 'qrcode');
+    $qrcode_Size = elgg_get_plugin_setting('qrcode_Size', 'qrcode');
+    
+    echo "<h4>";
+    echo elgg_echo('qrcode:admin:title:qrcode');
+    echo "</h4><br/>";
+    echo '<label>' . elgg_echo('qrcode:admin:ecc-level') . ':' . '</label>';
     echo "<br />";
-	echo elgg_view('input/text', array('name'=>'params[site_logo]', 'value'=>$site_logo));
-	echo "<br /><br/>";                    
+    echo elgg_view("input/dropdown", array("name" => "params[qrcode_ECC]", "options_values" =>$ecc_options, $qrcode_ECC, "class" => "mls"));
+    echo "<div class='elgg-subtext'>" . elgg_echo("qrcode:admin:ecc-level:description") . "</div>";
+    echo "<br />";
+    
+    echo '<label>' . elgg_echo('qrcode:admin:size') . ':' . '</label>';
+    echo "<br />";
+    echo elgg_view("input/dropdown", array("name" => "params[qrcode_size]", "options_values" =>$size_options, $qrcode_Size, "class" => "mls"));
+    echo "<div class='elgg-subtext'>" . elgg_echo("qrcode:admin:ecc-size:description") . "</div>";
+    echo "<br />";                    
+    
 ?>	
 </div>
