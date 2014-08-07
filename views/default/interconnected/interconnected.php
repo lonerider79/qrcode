@@ -8,14 +8,7 @@
  *************************/
     elgg_load_library('qrcode');
     $INTERCONNECTED_PAGE_DATA = get_sharing_data_for_current_page();
-    $social_sites = array(
-                            'twitter',
-                            'facebook',
-                            'googleplus',
-                            'linkedin',
-                            'pinterest',
-                            'stumbleupon',
-                            'email');
+    $social_sites = array('email');
     
 
                   
