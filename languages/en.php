@@ -1,8 +1,6 @@
 <?php
 $english = array(
     'qrcode:label'	=> 'URL QR Code',
-    'qrcode:widget:buttons' => 'URL QR Code',
-    'qrcode:widget:buttons_descr' => 'Lets you open the url by scanning the QR Code displayed.',
     'qrcode:admin:title:qrcode' => 'QR Code Generator options.',
     'qrcode:admin:ecc-level' => 'QR Code ECC Level',
     'qrcode:admin:ecc-level:description' => 'Specify the density of the code.Maximum takes time but generates most accurate data.',

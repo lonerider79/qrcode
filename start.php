@@ -21,13 +21,7 @@ function qrcode_init() {
     {
 	elgg_extend_view('css/elgg', 'qrcode/css');
         elgg_extend_view('page/elements/sidebar','sidebar/qrcode',700);
-        elgg_extend_view('widgets/set_description/content', 'qrcode/simple', 500);
     }
-
-
-    
-    // Register widgets
-    elgg_register_widget_type('qrcode', elgg_echo('qrcode:widget:buttons'), elgg_echo('qrcode:widget:buttons_descr'), 'index');
 }
 
 // call init
