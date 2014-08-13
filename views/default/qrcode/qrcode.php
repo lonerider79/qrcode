@@ -7,7 +7,7 @@
 
     $body = '<ul class="elgg-qrcode-wrapper">';
     $body .= '<li>';
-    $body .= elgg_view('output/img',array('src' => elgg_get_site_url() . 'qrbitmap/','alt' => 'QR Code'));
+    $body .= elgg_view('output/img',array('src' => elgg_get_site_url() . 'qrbitmap/url/' . urlencode(current_page_url()),'alt' => 'QR Code'));
     $body .= '</li>';       
     $body.= '</ul>';
 

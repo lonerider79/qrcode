@@ -35,8 +35,8 @@
 
 
 $url = current_page_url();
+echo "<h3>" . elgg_echo('qrcode:admin:preview') . "</h3><br/>";
 
-
-echo '<img src="' . elgg_get_site_url() . 'action/qrcode/bitmap/"></div>';
+echo elgg_view('output/img',array('src' => elgg_get_site_url() . 'qrbitmap/url/' . urlencode(current_page_url()),'alt' => 'QR Code'));
 ?>	
 </div>

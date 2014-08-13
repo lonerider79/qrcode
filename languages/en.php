@@ -6,6 +6,7 @@ $english = array(
     'qrcode:admin:ecc-level:description' => 'Specify the density of the code.Maximum takes time but generates most accurate data.',
     'qrcode:admin:size' => 'Specify Display size of the QR Code Image',    
     'qrcode:admin:ecc-size:description' => 'Specify the QR version or size of the QR image produced.',
+    'qrcode:admin:preview' => 'Preview QR Code'
 );
 add_translation("en", $english);
 ?>

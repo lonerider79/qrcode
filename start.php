@@ -35,6 +35,9 @@ function qrbitmap_page_handler($page, $handler) {
     $pages = $plugin_path . 'qrcode/pages/qrcode';
     switch ($page[0]) {
         case 'index':
+            $vars["qurl"]=urldecode($handler[1]);
+            var_dump($handler[1]);
+            die;
             include "$pages/index.php";
             break;
         default:
