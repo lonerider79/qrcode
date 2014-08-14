@@ -14,7 +14,7 @@ function qrcode_init() {
     $context = elgg_get_context();
    // elgg_dump($context);
     elgg_register_library("qrcode", dirname(__FILE__) . "/vendors/phpqrcode/qrlib.php");
-    //elgg_register_action('qrcode/bitmap', __DIR__ . "/actions/bitmap_action.php",'public');
+    elgg_register_library('qrcore', __DIR__ . "/lib/qrcode.php",'public');
     // Register a pagehandler
     elgg_register_page_handler('qrbitmap', 'qrbitmap_page_handler');
     elgg_extend_view('css/admin', 'qrcode/admin', 1);
@@ -34,10 +34,8 @@ function qrbitmap_page_handler($page, $handler) {
     $plugin_path = elgg_get_plugins_path();
     $pages = $plugin_path . 'qrcode/pages/qrcode';
     switch ($page[0]) {
-        case 'index':
-            $vars["qurl"]=urldecode($handler[1]);
-            var_dump($handler[1]);
-            die;
+        case 'url':
+            $vars["qurl"]=urldecode($page[1]);
             include "$pages/index.php";
             break;
         default:

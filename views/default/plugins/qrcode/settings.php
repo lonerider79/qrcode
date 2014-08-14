@@ -2,6 +2,7 @@
 <?php 
 
     elgg_load_library('qrcode'); //To get the Constants
+    elgg_load_library('qrcore');
     $ecc_options = array(
             QR_ECLEVEL_L => "L(minimum)",
             QR_ECLEVEL_M => "M",
@@ -37,6 +38,6 @@
 $url = current_page_url();
 echo "<h3>" . elgg_echo('qrcode:admin:preview') . "</h3><br/>";
 
-echo elgg_view('output/img',array('src' => elgg_get_site_url() . 'qrbitmap/url/' . urlencode(current_page_url()),'alt' => 'QR Code'));
+echo elgg_view('output/img',array('src' => elgg_get_site_url() . 'qrbitmap/url/' . strToHex(current_page_url()),'alt' => 'QR Code'));
 ?>	
 </div>
