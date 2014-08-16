@@ -4,11 +4,12 @@ qrcode
 
 This plugin enables QR Code on Elgg pages. 
 
-- not functional yet.
+- Beta Version
 
 features:
 
-* adds a QR Code image customizable through Admin interface.
+* adds a QR Code Image with parameters customizable through Admin interface.(Size, ECC Level)
+The QR Image is displayed on the sidebar of most pages except Admin,members etc
 
 install:
 
@@ -17,9 +18,10 @@ install:
 3. activate the plugin.
 4. optional: choose various options in admin panel for customizing the QR Code displayed
 
-todo:
+ToDo:
 
-* almost everything
-notes:
+* Proper documentation of pages
 
-* This version is not ready to be deployed
+Notes:
+
+* BETA Version. Size options need to to be reconsidered

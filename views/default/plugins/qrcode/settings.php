@@ -1,6 +1,10 @@
 <div class="plugin-panel">
 <?php 
-
+    /**
+     * QR Code Administration Page. Uses default action submitter
+     * @package qrcode
+     * 
+     */
     elgg_load_library('qrcode'); //To get the Constants
     $ecc_options = array(
             QR_ECLEVEL_L => "L(minimum)",
@@ -33,10 +37,6 @@
     echo "<br />";                    
 
 
-
-$url = current_page_url();
-
-
-echo '<img src="' . elgg_get_site_url() . 'action/qrcode/bitmap/"></div>';
+    echo elgg_view('qrcode/qrcode',array('qurl' => current_page_url()));
 ?>	
 </div>
