@@ -1,15 +1,15 @@
-qrcode
+QR Code
 ==============
 
+This is my first Elgg plugin.
+This plugin displays QR Code on Elgg pages. 
 
-This plugin enables QR Code on Elgg pages. 
-
-- Beta Version
+- Currently works with Elgg 1.8
 
 features:
 
-* adds a QR Code Image with parameters customizable through Admin interface.(Size, ECC Level)
-The QR Image is displayed on the sidebar of most pages except Admin,members etc
+* adds a QR Code Image(URL of the page) with QR parameters customizable through Admin interface.(Size, ECC Level)
+The QR Image is displayed on the sidebar of most pages except Admin, members etc
 
 install:
 
@@ -20,8 +20,15 @@ install:
 
 ToDo:
 
-* Proper documentation of pages
+* Apply QR to other special sections like bookmarks
 
 Notes:
 
-* BETA Version. Size options need to to be reconsidered
+* Size options need to to be reconsidered
+* Check our repository https://github.com/vinuf666/qrcode.git
+
+Credits:
+
+* http://phpqrcode.sourceforge.net/ library folks whose code forms the base of the plugin.
+* Matt Beckett of elgg Beginners forum for his help at various stages during the development.
+

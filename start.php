@@ -45,24 +45,6 @@ function qrcode_page_handler($page, $handler) {
     return true;
 }
 
-function qrbitmap_page_handler($page, $handler) {
-
-    if (!isset($page[0])) {
-        $page[0] = 'index';
-    }
-    $plugin_path = elgg_get_plugins_path();
-    $pages = $plugin_path . 'qrcode/pages/qrcode';
-    switch ($page[0]) {
-        case 'url':
-            $vars["qurl"]=urldecode($page[1]);
-            include "$pages/index.php";
-            break;
-        default:
-            return false;
-    }
-    return true;
-}
-
 // call init
 elgg_register_event_handler('init','system','qrcode_init');
 
