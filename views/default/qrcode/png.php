@@ -12,5 +12,10 @@
 
 header('Content-type:image/png');
 elgg_load_library('qrcode');
+
 QRcode::png($vars['qurl'],false,$vars['qrcode_ECC'],$vars['qrcode_Size']);
+
+elgg_load_library('qrcore');
+QRcode::png(hexToStr($vars['url']),false,$vars['qrcode_ECC'],$vars['qrcode_Size']);
+
 
