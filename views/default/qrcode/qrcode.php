@@ -7,9 +7,17 @@
  *  
  *************************/
     elgg_load_library('qrshared');
-    $qc_url = elgg_get_site_url() . '/qrcode/qrcode/' .	strToHex($vars['qurl']); //pages link
+    
+    
+    $pos = strrpos($vars['qurl'], elgg_get_site_url()); // Security fix. Prevent other domains from hotlinking
     $body = '<ul class="elgg-qrcode-wrapper"><li>';
-    $body .= elgg_view('output/img',array('src' => $qc_url, 'alt' => $vars['qurl']));
+    if($pos === false) { //Hotlinked
+        $qc_url = elgg_get_site_url() . '/qrcode/qrcode/' . strToHex('Hotlinking not allowed'); //pages link
+        $body .= elgg_view('output/img',array('src' => $qc_url, 'alt' => 'No Hotlinking please'));
+    } else {
+        $qc_url = elgg_get_site_url() . '/qrcode/qrcode/' . strToHex($vars['qurl']); //pages link
+        $body .= elgg_view('output/img',array('src' => $qc_url, 'alt' => $vars['qurl']));
+    };
     $body.= '</li></ul>';
 
     echo $body;

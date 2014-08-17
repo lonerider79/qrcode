@@ -38,7 +38,12 @@ function qrcode_page_handler($page, $handler) {
         $qrcode_ECC = ($qrcode_ECC == '') ? QR_ECLEVEL_M : $qrcode_ECC;
         $qrcode_Size = ($qrcode_Size == '') ? 5 : intval($qrcode_Size);
         $qurl = hexToStr($page[1]); //Decode URL Hex
-        echo elgg_view('qrcode/png', array('qurl' => $qurl, 'qrcode_ECC' => $qrcode_ECC, 'qrcode_Size' => $qrcode_Size));            
+        $pos = strrpos($qurl, elgg_get_site_url()); // Security fix. Prevent other domains from hotlinking
+        if($pos === false) { //Hotlinked
+            echo elgg_view('qrcode/png', array('qurl' => 'Hotlinking not allowed', 'qrcode_ECC' => $qrcode_ECC, 'qrcode_Size' => $qrcode_Size)); 
+        } else {
+            echo elgg_view('qrcode/png', array('qurl' => $qurl, 'qrcode_ECC' => $qrcode_ECC, 'qrcode_Size' => $qrcode_Size));
+        }
     }else{
         return false;
     };
