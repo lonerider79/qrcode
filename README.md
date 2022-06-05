@@ -25,7 +25,7 @@ ToDo:
 Notes:
 
 * Size options need to to be reconsidered
-* Check our repository https://github.com/vinuf666/qrcode.git
+* Check our repository [https://github.com/lonerider79/qrcode.git]
 
 Credits:
 
